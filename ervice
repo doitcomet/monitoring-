@@ -1,0 +1,21 @@
+[0;1;32m●[0m docker.service - Docker Application Container Engine
+     Loaded: loaded (/lib/systemd/system/docker.service; enabled; vendor preset: enabled)
+     Active: [0;1;32mactive (running)[0m since Sat 2024-03-23 13:28:49 EDT; 3s ago
+TriggeredBy: [0;1;32m●[0m docker.socket
+       Docs: https://docs.docker.com
+   Main PID: 193997 (dockerd)
+      Tasks: 14
+     Memory: 28.8M
+     CGroup: /system.slice/docker.service
+             └─193997 /usr/bin/dockerd -H fd:// --containerd=/run/containerd/containerd.sock
+
+Mar 23 13:28:49 manager systemd[1]: Starting Docker Application Container Engine...
+Mar 23 13:28:49 manager dockerd[193997]: time="2024-03-23T13:28:49.648380146-04:00" level=info msg="Starting up"
+Mar 23 13:28:49 manager dockerd[193997]: time="2024-03-23T13:28:49.649823960-04:00" level=info msg="detected 127.0.0.53 nameserver, assuming systemd-resolved, so using resolv.conf: /run/systemd/resolve/resolv.conf"
+Mar 23 13:28:49 manager dockerd[193997]: time="2024-03-23T13:28:49.682552834-04:00" level=info msg="Loading containers: start."
+Mar 23 13:28:49 manager dockerd[193997]: time="2024-03-23T13:28:49.755558581-04:00" level=info msg="Default bridge (docker0) is assigned with an IP address 172.17.0.0/16. Daemon option --bip can be used to set a preferred IP address"
+Mar 23 13:28:49 manager dockerd[193997]: time="2024-03-23T13:28:49.833326413-04:00" level=info msg="Loading containers: done."
+Mar 23 13:28:49 manager dockerd[193997]: time="2024-03-23T13:28:49.845078358-04:00" level=info msg="Docker daemon" commit=8b79278 containerd-snapshotter=false storage-driver=overlay2 version=26.0.0
+Mar 23 13:28:49 manager dockerd[193997]: time="2024-03-23T13:28:49.845234928-04:00" level=info msg="Daemon has completed initialization"
+Mar 23 13:28:49 manager dockerd[193997]: time="2024-03-23T13:28:49.881623258-04:00" level=info msg="API listen on /run/docker.sock"
+Mar 23 13:28:49 manager systemd[1]: Started Docker Application Container Engine.
