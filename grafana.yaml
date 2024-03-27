@@ -18,13 +18,10 @@ spec:
         supplementalGroups:
           - 0
       volumes:
+        # PersistentVolumeClaim을 통해 NFS를 사용하여 데이터 저장
         - name: grafana-storage
           persistentVolumeClaim:
             claimName: grafana-pvc
-        # Add volume for dashboard files
-        - name: grafana-dashboards
-          hostPath:
-            path: /etc/grafana/provisioning/dashboards
       containers:
         - name: grafana
           image: doitcomet/grafana:v5.0
@@ -32,11 +29,9 @@ spec:
             - name: grafana
               containerPort: 3000
           volumeMounts:
+            # PersistentVolumeClaim으로 마운트된 디렉터리에 저장
             - mountPath: /var/lib/grafana
               name: grafana-storage
-            # Mount the dashboards directory
-            - mountPath: /etc/grafana/provisioning/dashboards
-              name: grafana-dashboards
           env:
             - name: GF_SERVER_HTTP_PORT
               value: "3000"
